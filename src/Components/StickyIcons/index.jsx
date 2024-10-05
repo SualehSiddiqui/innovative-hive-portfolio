@@ -1,0 +1,33 @@
+import React, { useState } from 'react'
+import "./style.css";
+import { FaXTwitter, FaWhatsapp } from "react-icons/fa6";
+
+function StickyIcons() {
+    const [showIcons, setShowIcons] = useState(false)
+    return (
+        <>
+            <input
+                className='hidden-input'
+                checked={showIcons}
+                onChange={e =>
+                    setShowIcons(!showIcons)
+                }
+                type="checkbox"
+                id='chk'
+                name='checkbox'
+            />
+            <label htmlFor="chk" className='icon-check'>
+                {/* {showIcons ? <ImCross size={30} /> : <SiGooglemessages />} */}
+            </label>
+            <a href='https://wa.me/13868469348' target='_blank' rel="noopener noreferrer" className='icons-div icons-div-1'>
+                <FaWhatsapp className="nav-icons" />
+            </a>
+            <a href='https://x.com/ArtistryModel?t=5LbTgHQD_9SU7DeSiQVrXA&s=09' target='_blank' rel="noopener noreferrer" className='icons-div icons-div-2'>
+                <FaXTwitter className="nav-icons" />
+            </a>
+
+        </>
+    )
+}
+
+export default StickyIcons;
