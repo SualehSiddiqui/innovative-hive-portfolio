@@ -66,6 +66,7 @@ const GraphicDesigning = () => {
   const [dataDND, setDataDND] = useState([]);
   const [datalogoBanner, setDatalogoBanner] = useState([]);
   const [dataComicBook, setDataComicBook] = useState([]);
+  const [dataCharectorArt, setDataCharectorArt] = useState([]);
 
   const get3dData = async () => {
     try {
@@ -184,6 +185,19 @@ const GraphicDesigning = () => {
     }
   };
 
+  const getCharectorArt = async () => {
+    try {
+      setShowLoader(true);
+      const q = query(collection(db, "Images"), where("type", "==", "charector art"));
+      const querySnapshot = await getDocs(q);
+      const imageList = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setDataCharectorArt(imageList);
+      setShowLoader(false);
+    } catch (error) {
+      console.error("Error fetching 2D images: ", error);
+    }
+  };
+
   useEffect(() => {
     get3dData();
     get2dData();
@@ -192,8 +206,9 @@ const GraphicDesigning = () => {
     getTwitchData();
     getArtRoom();
     getDND();
-    getlogoBanner()
-    getComicBook()
+    getlogoBanner();
+    getComicBook();
+    getCharectorArt();
   }, []);
 
   // Define a state variable to store the window width
@@ -356,20 +371,44 @@ const GraphicDesigning = () => {
             })
           }
         </Container>
-        <h2 data-aos="fade-left" data-aos-duration={600} >
-          Furry
-        </h2>
+      </div >
+      {/* Charector Art */}
+      <div className="main-img-div" >
+        <h1>
+          <p data-aos="fade-right" data-aos-duration={600} >
+            Character Art
+          </p>
+          <SvgComponent />
+        </h1>
         <Container className="img-container">
           {
-            data2d[0] && Object.entries(data2d[0].Furri).map(([key, value]) => {
+            dataCharectorArt[0] && Object.entries(dataCharectorArt[0].landscape).map(([key, value]) => {
               return (
                 <div className="img-div" key={key}>
-                  <Image
-                    src={value}
-                    alt="img"
-                    width={windowWidth < 430 ? 300 : 350}
-                    height={windowWidth < 430 ? 350 : 400}
-                  />
+                  <Carousel
+                    arrows
+                    prevArrow={<CustomPrevArrow />}
+                    nextArrow={<CustomNextArrow />}
+                    infinite={true}
+                    autoplay={true}
+                    effect={'scrollx'}
+                    // fade={true}
+                    autoplaySpeed={10000}
+                    className="main-carousel"
+                  >
+                    {value && value.map((v, i) => {
+                      return (
+                        <div className='carousel-div' key={i}>
+                          <Image
+                            width={windowWidth < 430 ? 300 : 350}
+                            height={windowWidth < 430 ? 350 : 400}
+                            src={v}
+                            alt="Image"
+                          />
+                        </div>
+                      )
+                    })}
+                  </Carousel>
                 </div>
               )
             })
@@ -692,8 +731,6 @@ const GraphicDesigning = () => {
           </Container>
         }
       </div >
-      {/* <Counter />
-      <Footer /> */}
       <StickyIcons />
     </div>
   )
