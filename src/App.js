@@ -345,7 +345,6 @@ const GraphicDesigning = () => {
         </Container>
       </div >
       {/* 2D Art */}
-      < div className="main-img-div" >
       {/* < div className="main-img-div" >
         <h1>
           <p data-aos="fade-right" data-aos-duration={600} >
