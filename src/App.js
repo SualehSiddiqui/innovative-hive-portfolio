@@ -281,6 +281,7 @@ const GraphicDesigning = () => {
             })
           }
         </Container>
+        <div className='division-line' ></div>
         <h2 data-aos="fade-left" data-aos-duration={600} >
           Furry
         </h2>

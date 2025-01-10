@@ -9,7 +9,7 @@
 }
 
 .svg-main-div>svg {
-    color: white;
+    color: var(--color-3);
     display: block;
     height: 100%;
     left: 50%;

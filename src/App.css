@@ -13,8 +13,8 @@
 
 .main-img-div>h1 {
   font-size: 5rem;
-  background-color: white;
-  color: var(--color-1);
+  background-color: var(--color-3);
+  color: var(--color-4);
   padding: 20px;
   position: relative;
 }
@@ -27,6 +27,13 @@
 .main-img-div>h2 {
   font-size: 3rem;
   margin-top: 50px;
+}
+
+.division-line {
+  margin-top: 70px;
+  background-color: white;
+  height: 2px;
+  width: 100%;
 }
 
 .img-container {

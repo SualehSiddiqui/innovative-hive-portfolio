@@ -1,5 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
 * {
   padding: 0;
@@ -14,6 +13,8 @@ body {
 }
 
 :root {
-  --color-1: #1c0522;
+  --color-1: #36454F;
   --color-2: #2b1055;
+  --color-3: #000000;
+  --color-4: #ffffff;
 }
