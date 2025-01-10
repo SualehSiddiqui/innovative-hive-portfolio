@@ -58,7 +58,7 @@ const GraphicDesigning = () => {
   const [comicToggleValue, setComicToggleValue] = useState(false)
   const [comicValue, setComicValue] = useState([])
   const [data3d, setData3d] = useState([]);
-  const [data2d, setData2d] = useState([]);
+  // const [data2d, setData2d] = useState([]);
   const [dataRefernce, setDataRefernce] = useState([]);
   const [dataVR, setDataVR] = useState([]);
   const [dataArtRoom, setDataArtRoom] = useState([]);
@@ -81,18 +81,18 @@ const GraphicDesigning = () => {
     }
   };
 
-  const get2dData = async () => {
-    setShowLoader(true);
-    try {
-      const q = query(collection(db, "Images"), where("type", "==", "2d"));
-      const querySnapshot = await getDocs(q);
-      const imageList = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      setData2d(imageList);
-      setShowLoader(false)
-    } catch (error) {
-      console.error("Error fetching 2D images: ", error);
-    }
-  };
+  // const get2dData = async () => {
+  //   setShowLoader(true);
+  //   try {
+  //     const q = query(collection(db, "Images"), where("type", "==", "2d"));
+  //     const querySnapshot = await getDocs(q);
+  //     const imageList = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  //     setData2d(imageList);
+  //     setShowLoader(false)
+  //   } catch (error) {
+  //     console.error("Error fetching 2D images: ", error);
+  //   }
+  // };
 
   const getRefernceData = async () => {
     try {
@@ -200,7 +200,7 @@ const GraphicDesigning = () => {
 
   useEffect(() => {
     get3dData();
-    get2dData();
+    // get2dData();
     getRefernceData();
     getVRData();
     getTwitchData();
@@ -346,6 +346,7 @@ const GraphicDesigning = () => {
       </div >
       {/* 2D Art */}
       < div className="main-img-div" >
+      {/* < div className="main-img-div" >
         <h1>
           <p data-aos="fade-right" data-aos-duration={600} >
             2D Art
@@ -371,7 +372,7 @@ const GraphicDesigning = () => {
             })
           }
         </Container>
-      </div >
+      </div > */}
       {/* Charector Art */}
       <div className="main-img-div" >
         <h1>
@@ -382,34 +383,18 @@ const GraphicDesigning = () => {
         </h1>
         <Container className="img-container">
           {
-            dataCharectorArt[0] && Object.entries(dataCharectorArt[0].landscape).map(([key, value]) => {
+            dataCharectorArt[0] && Object.entries(dataCharectorArt[0].images).map(([key, value]) => {
               return (
-                <div className="img-div" key={key}>
-                  <Carousel
-                    arrows
-                    prevArrow={<CustomPrevArrow />}
-                    nextArrow={<CustomNextArrow />}
-                    infinite={true}
-                    autoplay={true}
-                    effect={'scrollx'}
-                    // fade={true}
-                    autoplaySpeed={10000}
-                    className="main-carousel"
-                  >
-                    {value && value.map((v, i) => {
-                      return (
-                        <div className='carousel-div' key={i}>
-                          <Image
-                            width={windowWidth < 430 ? 300 : 350}
-                            height={windowWidth < 430 ? 350 : 400}
-                            src={v}
-                            alt="Image"
-                          />
-                        </div>
-                      )
-                    })}
-                  </Carousel>
-                </div>
+                <>
+                  <div className='charector-art-img-div' key={key}>
+                    <Image
+                      width={windowWidth < 430 ? 300 : 350}
+                      height={windowWidth < 430 ? 350 : 400}
+                      src={value}
+                      alt="Image"
+                    />
+                  </div>
+                </>
               )
             })
           }
