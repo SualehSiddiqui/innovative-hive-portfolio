@@ -205,6 +205,20 @@ import Set3Img1_DND from "./Assets/DND/set3img1.png";
 import Set3Img2_DND from "./Assets/DND/set3img2.png";
 import Set3Img3_DND from "./Assets/DND/set3img3.png";
 
+//Reference Sheet
+import Character1_ReferenceSheet from "./Assets/ReferenceSheet/character1.png";
+import Character2_ReferenceSheet from "./Assets/ReferenceSheet/character2.png";
+import Character3_ReferenceSheet from "./Assets/ReferenceSheet/character3.png";
+import Character4_ReferenceSheet from "./Assets/ReferenceSheet/character4.png";
+import Character5_ReferenceSheet from "./Assets/ReferenceSheet/character5.png";
+import Character6_ReferenceSheet from "./Assets/ReferenceSheet/character6.png";
+import Character7_ReferenceSheet from "./Assets/ReferenceSheet/character7.png";
+import Character8_ReferenceSheet from "./Assets/ReferenceSheet/character8.png";
+import Character9_ReferenceSheet from "./Assets/ReferenceSheet/character9.png";
+import Character10_ReferenceSheet from "./Assets/ReferenceSheet/character10.png";
+import Character11_ReferenceSheet from "./Assets/ReferenceSheet/character11.png";
+import Character12_ReferenceSheet from "./Assets/ReferenceSheet/character12.png";
+
 
 const CustomPrevArrow = ({ onClick }) => (
   <div className="carousel-arrows left-arrow" onClick={onClick}>
@@ -246,10 +260,9 @@ const ComicBookViewer = ({ value }) => {
   );
 };
 
-const GraphicDesigning = () => {
+const Portfolio = () => {
   const [comicToggleValue, setComicToggleValue] = useState(false)
   const [comicValue, setComicValue] = useState([])
-  const [dataRefernce, setDataRefernce] = useState([]);
 
   const dataTwitch = {
     images: [
@@ -595,8 +608,24 @@ const GraphicDesigning = () => {
         Character11Img2Human_3DArt,
       ],
     }
-  }
+  };
 
+  const dataRefernce = {
+    images: [
+      Character1_ReferenceSheet,
+      Character2_ReferenceSheet,
+      Character3_ReferenceSheet,
+      Character4_ReferenceSheet,
+      Character5_ReferenceSheet,
+      Character6_ReferenceSheet,
+      Character7_ReferenceSheet,
+      Character8_ReferenceSheet,
+      Character9_ReferenceSheet,
+      Character10_ReferenceSheet,
+      Character11_ReferenceSheet,
+      Character12_ReferenceSheet,
+    ]
+  }
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -815,7 +844,7 @@ const GraphicDesigning = () => {
         </h1>
         <Container className="img-container">
           {
-            dataRefernce[0] && dataRefernce[0].images.map((v, i) => (
+            dataRefernce && dataRefernce.images.map((v, i) => (
               <div className="reference-img-div" key={i}>
                 <Image
                   src={v}
@@ -1085,7 +1114,4 @@ const GraphicDesigning = () => {
   )
 }
 
-
-
-
-export default GraphicDesigning;
+export default Portfolio;
