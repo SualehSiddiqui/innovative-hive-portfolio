@@ -36,25 +36,24 @@ header {
     color: white;
 }
 
-.scrolling-text p {
-    display: inline-block;
-    animation: scrollText 10s linear infinite;
+.scrolling-text>p {
+    margin-bottom: 0;
 }
 
-@keyframes scrollText {
-    0% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
+.nav-scrolled {
+    display: block !important;
+    background-color: white;
+    color: black;
 }
-
-
 
 @media only screen and (max-width:997px) {
     .logo-div {
         width: 40%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .scrolling-text {
+        display: none;
     }
 }
