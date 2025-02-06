@@ -424,7 +424,7 @@ const Portfolio = () => {
       }
       <Navbar />
       {/* 3D Avatar */}
-      <div className="main-img-div" >
+      <div className="main-img-div" id='3dAvatar'>
         <h1>
           <p data-aos="fade-right" data-aos-duration={600} >
             3D Avatar
@@ -533,7 +533,7 @@ const Portfolio = () => {
         </Container>
       </div >
       {/* Character Art */}
-      <div className="main-img-div" >
+      <div className="main-img-div" id='charcterArt'>
         <h1>
           <p data-aos="fade-right" data-aos-duration={600} >
             Character Art
@@ -560,7 +560,7 @@ const Portfolio = () => {
         </Container>
       </div >
       {/* Twitch */}
-      < div className="main-img-div" >
+      < div className="main-img-div" id='twitch' >
         <h1>
           <p data-aos="fade-right" data-aos-duration={600} >
             Twitch
@@ -601,7 +601,7 @@ const Portfolio = () => {
         </Container>
       </div >
       {/* Reference Sheet */}
-      < div className="main-img-div" >
+      < div className="main-img-div" id='referenceSheets'>
         <h1>
           <p data-aos="fade-right" data-aos-duration={600} >
             Reference Sheets
@@ -624,7 +624,7 @@ const Portfolio = () => {
         </Container>
       </div >
       {/* Vr World */}
-      < div className="main-img-div" >
+      < div className="main-img-div" id='vRWorld'>
         <h1>
           <p data-aos="fade-right" data-aos-duration={600} >
             VR World
@@ -647,7 +647,7 @@ const Portfolio = () => {
         </Container>
       </div >
       {/* Art Room */}
-      < div className="main-img-div" >
+      < div className="main-img-div" id='artRoom'>
         <h1>
           <p data-aos="fade-right" data-aos-duration={600} >
             Art Room
@@ -698,8 +698,8 @@ const Portfolio = () => {
         </Container>
       </div >
       {/* DND */}
-      < div className="main-img-div" >
-        <h1>
+      < div className="main-img-div" id='dnd'>
+        <h1 id='dnd'>
           <p data-aos="fade-right" data-aos-duration={600} >
             DND
           </p>
@@ -749,7 +749,7 @@ const Portfolio = () => {
         </Container>
       </div >
       {/* logo/banner */}
-      < div className="main-img-div" >
+      < div className="main-img-div" id='logoAndBanner'>
         <h1>
           <p data-aos="fade-right" data-aos-duration={600} >
             Logo and Banner
@@ -820,7 +820,7 @@ const Portfolio = () => {
         </Container>
       </div >
       {/* Comic Book */}
-      < div className="main-img-div" >
+      < div className="main-img-div" id='comicBook'>
         <h1>
           <p data-aos="fade-right" data-aos-duration={600} >
             Comic Book
