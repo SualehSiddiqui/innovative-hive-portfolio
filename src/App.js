@@ -403,7 +403,7 @@ const Portfolio = () => {
 
     // Add the event listener when the component mounts
     window.addEventListener('resize', handleResize);
-  }, []); // The dependency array is empty, so this effect runs only once
+  }, []);
 
   const handleContextMenu = (e) => {
     e.preventDefault();

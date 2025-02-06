@@ -40,7 +40,7 @@
 }
 
 #chk:checked~.icons-div-1 {
-    background-color: #075E54;
+    background-color: #25D366;
     transform: translateY(-3em) translateX(-0.1em);
     opacity: 1;
     transition-delay: .2s;
@@ -49,6 +49,13 @@
 #chk:checked~.icons-div-2 {
     background-color: #000;
     transform: translateY(-6em) translateX(-0.1em);
+    opacity: 1;
+    transition-delay: .2s;
+}
+
+#chk:checked~.icons-div-3 {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    transform: translateY(-9em) translateX(-0.1em);
     opacity: 1;
     transition-delay: .2s;
 }

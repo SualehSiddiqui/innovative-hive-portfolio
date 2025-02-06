@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./style.css";
-import { FaXTwitter, FaWhatsapp } from "react-icons/fa6";
+import { FaXTwitter, FaWhatsapp, FaInstagram } from "react-icons/fa6";
 
 function StickyIcons() {
     const [showIcons, setShowIcons] = useState(false)
@@ -17,15 +17,30 @@ function StickyIcons() {
                 name='checkbox'
             />
             <label htmlFor="chk" className='icon-check'>
-                {/* {showIcons ? <ImCross size={30} /> : <SiGooglemessages />} */}
             </label>
-            <a href='https://wa.me/13868469348' target='_blank' rel="noopener noreferrer" className='icons-div icons-div-1'>
+            <a
+                href='https://wa.me/13868469348'
+                target='_blank'
+                rel="noopener noreferrer"
+                className='icons-div icons-div-1'
+            >
                 <FaWhatsapp className="nav-icons" />
             </a>
-            <a href='https://x.com/ArtistryModel?t=5LbTgHQD_9SU7DeSiQVrXA&s=09' target='_blank' rel="noopener noreferrer" className='icons-div icons-div-2'>
+            <a
+                href='https://x.com/ArtistryModel?t=5LbTgHQD_9SU7DeSiQVrXA&s=09'
+                target='_blank'
+                rel="noopener noreferrer"
+                className='icons-div icons-div-2'
+            >
                 <FaXTwitter className="nav-icons" />
             </a>
-
+            <a
+                href='https://www.instagram.com/artistry_world_?igsh=aXVtaThtMm5jMHBx'
+                target='_blank' rel="noopener noreferrer"
+                className='icons-div icons-div-3'
+            >
+                <FaInstagram className="nav-icons" />
+            </a>
         </>
     )
 }
