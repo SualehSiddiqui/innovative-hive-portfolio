@@ -41,7 +41,7 @@
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 100px
+  /* margin-top: 100px */
 }
 
 .img-container .img-div {
@@ -278,6 +278,17 @@
 }
 
 @media only screen and (max-width:576px) {
+  .main-img-div {
+    padding: 100px 0px;
+  }
+
+  .main-img-div>h1 {
+    font-size: 3rem;
+  }
+
+  .main-img-div>h2 {
+    font-size: 2.6rem;
+  }
 
   .service-hero,
   .service-img-main {
@@ -297,18 +308,6 @@
     font-size: 14px;
   }
 
-  .main-img-div {
-    padding: 50px 0px;
-  }
-
-  .main-img-div>h1 {
-    font-size: 3rem;
-  }
-
-  .main-img-div>h2 {
-    font-size: 2.6rem;
-  }
-
   .demo-page-1::after {
     opacity: 1;
   }
@@ -324,7 +323,7 @@
     width: 300px;
   }
 
-  .img-container .charector-art-img-div {
+  .img-container .character-art-img-div {
     width: 300px;
     height: 350px;
   }
