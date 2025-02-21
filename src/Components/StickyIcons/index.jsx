@@ -1,11 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./style.css";
-import { FaXTwitter, FaWhatsapp, FaInstagram } from "react-icons/fa6";
+import { FaXTwitter, FaWhatsapp, FaInstagram, FaArrowDown } from "react-icons/fa6";
 
 function StickyIcons() {
-    const [showIcons, setShowIcons] = useState(false)
+    const [showIcons, setShowIcons] = useState(false);
+    const [vibrateBtn, setVibrateBtn] = useState(false);
+    // console.log('vibrateBtn', vibrateBtn)
+    // useEffect(() => {
+    //     setInterval(() => {
+    //         setVibrateBtn(!vibrateBtn);
+    //     }, 5000);
+    // }, [])
     return (
         <>
+            <div
+                className='scroll-to-bottom'
+                // style={{ animationName: vibrateBtn ? 'vibrate' : 'none' }}
+                onClick={e => window.scrollTo(0, window.scrollY + (window.innerHeight * 1.5))}
+            >
+                <FaArrowDown />
+            </div>
             <input
                 className='hidden-input'
                 checked={showIcons}

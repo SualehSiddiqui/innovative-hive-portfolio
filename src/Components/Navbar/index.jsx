@@ -28,6 +28,16 @@ const Navbar = () => {
                         <img src={Logo} alt="Logo" />
                     </a>
                     <p className="nav-text">Click on the image for a better view.</p>
+                    <ul className="nav-links-div">
+                        {navLink.map(navItem => (
+                            <li key={navItem.title}>
+                                <a href={navItem.link} className="">
+                                    {navItem.title}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                    {/* <p className="nav-text">Click on the image for a better view.</p> */}
                     <span className="menu-icon" onClick={() => setToggleNav(true)} aria-label="Open Menu">
                         <IoMenu />
                     </span>
@@ -37,14 +47,14 @@ const Navbar = () => {
             {toggleNav && (
                 <div className="slider-main">
                     <h2>
-                        <span onClick={() => setToggleNav(false)} aria-label="Close Menu">
+                        <span onClick={() => setToggleNav(false)}>
                             <ImCross />
                         </span>
                     </h2>
                     <ul>
                         {navLink.map((navItem) => (
                             <li key={navItem.title}>
-                                <a href={navItem.link} className="nav-links res-nav-links">
+                                <a href={navItem.link} className="res-nav-links">
                                     {navItem.title}
                                 </a>
                             </li>
