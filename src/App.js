@@ -419,9 +419,7 @@ const Portfolio = () => {
 
   return (
     <div onContextMenu={handleContextMenu}>
-      {
-        showLoader && <Loader />
-      }
+      {showLoader && <Loader />}
       <Navbar />
       {/* 3D Avatar */}
       <div className="main-img-div" id='3dAvatar'>
